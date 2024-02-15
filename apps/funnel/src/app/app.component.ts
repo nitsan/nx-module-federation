@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NitsanService } from '@shared-services';
 
 @Component({
   selector: 'ng-mf-root',
@@ -7,4 +8,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'funnel';
+
+  constructor(nitsanService: NitsanService) {
+    nitsanService.logMessage('funnel');
+  }
 }

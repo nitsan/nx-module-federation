@@ -1,4 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
+import { NitsanService } from "@shared-services";
 
 @Component({
   selector: 'ng-mf-nx-welcome',
@@ -850,4 +851,10 @@ nx affected:e2e</pre>
   styles: [],
   encapsulation: ViewEncapsulation.None,
 })
-export class NxWelcomeComponent {}
+export class NxWelcomeComponent {
+
+  constructor(nitsanService: NitsanService) {
+    console.log('Inside lead-form NxWelcomeComponent constructor')
+    nitsanService.logMessage('lead-form');
+  }
+}
